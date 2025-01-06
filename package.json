@@ -1,21 +1,44 @@
 {
   "name": "next_electron",
   "version": "0.1.0",
+  "author": "Your Name",
+  "description": "A Next.js app packaged with Electron",
   "private": true,
+  "main": "main.js",
+  "build": {
+    "appId": "com.yourapp.next_electron",
+    "productName": "NextElectronApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "main.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build-electron": "electron-builder",
+    "dist": "yarn build && yarn build-electron",
     "start": "next start",
+    "start-electron": "electron .",
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "15.1.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "electron": "^33.2.1",
+    "electron-builder": "23.6.0",
     "eslint": "^9",
-    "eslint-config-next": "15.1.3",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.1.3"
   }
 }
