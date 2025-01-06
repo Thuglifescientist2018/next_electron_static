@@ -66,16 +66,12 @@ To start the development environment:
 
 ## Build
 
-1. Generate the static build for Next.js:
-   ```bash
-   yarn build
-   yarn export
+1. Generate the static build and exe for Next.js:
+   ```cmd/powershell
+   yarn dist
    ```
 
-2. Package the Electron app into an executable:
-   ```bash
-   yarn electron:build
-   ```
+
 
 ---
 
